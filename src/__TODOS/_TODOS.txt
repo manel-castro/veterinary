@@ -1,0 +1,61 @@
+Contact Form
+
+Contact by Whatsapp/Telegram button
+
+Galeria
+
+Apply flex to items
+  - Map
+  - Form 
+
+
+Make items responsive
+  - Abstract common ittems to make it easier
+
+Mobile version
+
+English version
+
+Icons
+
+AiFillGitlab (zorrillo)
+
+AiFillHeart (corazon)
+
+FaHeart
+
+FaLaughWink
+
+FaThumbsUp
+
+FaPlusCircle
+
+FaRegCommentDots
+
+AiFillInsurance (strangers)
+
+FaHourglassHalf
+
+FaHospitalAlt
+
+FaGlobe
+
+FaCat
+
+FaDog
+
+FaChild
+
+FaEllo
+
+FaEarlybirds
+
+FaBookReader
+
+FaWhatsapp
+
+FaZhihu
+
+FaAmericanSignLanguageInterpreting
+
+FaWeixin
