@@ -1,4 +1,5 @@
 import styled, { createGlobalStyle } from 'styled-components';
+import Theme from './api/data/Theme';
 
 const GlobalStyle = createGlobalStyle`
 * {
@@ -25,8 +26,8 @@ export const Container = styled.div`
 export const Button = styled.button`
   border-radius: 4px;
   white-space: nowrap;
-  background: #0467fb;
-  color: #fff;
+  background: ${Theme.globalStyles.Button.BgColor};
+  color: ${Theme.globalStyles.Button.TColor};
   font-size: 16px;
   outline: none;
   border: none;

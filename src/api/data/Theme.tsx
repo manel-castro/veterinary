@@ -5,7 +5,8 @@ const colors = {
   darkBlue: '#101522',
   orange: '#EBA769',
   lightOrange: '#EECFB3',
-  darkOrange: '#6B4D30',
+  darkOrange: '#D1965E',
+  brown: '#6B4D30',
   topLineBlue: '#4b59f7',
 };
 
@@ -13,8 +14,8 @@ const Theme = {
   Nav: {
     Color: {
       Links: 'black',
-      HoverLinks: '#4b59f7',
-      NavBackground: 'white',
+      HoverLinks: colors.orange,
+      NavBackground: 'rgba(0,0,0,0)',
     },
   },
   Features: {
@@ -22,7 +23,7 @@ const Theme = {
       BgColor: colors.orange,
     },
     BadgeText: {
-      TColor: colors.darkOrange,
+      TColor: 'white',
     },
   },
   InfoSection: {
@@ -41,8 +42,14 @@ const Theme = {
     SubTitle: {
       TColor: '#1c2237',
     },
-    InfoButtonHover: {
-      BgColor: '#4b59f7',
+    InfoButton: {
+      BgColorHover: colors.darkOrange,
+      TColorHover: 'white',
+    },
+  },
+  globalStyles: {
+    Button: {
+      BgColor: colors.orange,
       TColor: 'white',
     },
   },

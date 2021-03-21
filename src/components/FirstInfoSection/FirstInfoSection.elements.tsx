@@ -5,7 +5,8 @@ import { Container, Button } from '../../globalStyles';
 // height: calc(100vh-80px);
 export const InfoContainer = styled(Container)`
   background: ${Theme.InfoSection.InfoContainer.BgColor.Light};
-  padding: 100px 70px 270px;
+  padding-top: 100px;
+  padding-bottom: 270px;
   color: #fff;
 `;
 
@@ -15,6 +16,7 @@ export const InfoRow = styled.div`
   margin: 0 -15px -15px 0px;
   flex-wrap: wrap;
   align-items: center;
+  justify-content: center;
 
   flex-direction: ${({ imgStart }: { imgStart: boolean }) =>
     imgStart ? 'row-reverse' : 'row'};

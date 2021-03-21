@@ -1,4 +1,5 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
+import { throttle } from '../../_helpers/genericUtils';
 import {
   Nav,
   NavbarContainer,
@@ -10,34 +11,65 @@ import {
   NavRight,
   ImportantTextWrapper,
   ImportantText,
+  TitleContainer,
+  Title,
 } from './Navbar.elements';
 
-function Navbar() {
+const Navbar = () => {
+  const [big, setBig] = useState('big');
+  const [scrollLevel, setScrollLevel] = useState(0);
+  const TARGET_OFFSET = [200, 400];
+
+  useEffect(() => {
+    const actionToDo = () => {
+      // if (window.pageYOffset > TARGET_OFFSET) {
+      //   setBig('');
+      // } else {
+      //   setBig('big');
+      // }
+      setScrollLevel(window.pageYOffset);
+      console.log(scrollLevel);
+    };
+
+    const handleNav = () => {
+      throttle(200, actionToDo);
+    };
+
+    document.addEventListener('scroll', () => handleNav());
+
+    // dettacth EventListener when certain pageYOffset is reached
+    // and attach again when is up to the same level
+  });
+
   return (
     <Nav>
-      <NavbarContainer>
-        <LogoContainer>
-          <Logo></Logo>
+      <NavbarContainer big={big}>
+        <LogoContainer big={big}>
+          <Logo big={big} scrollLevel={scrollLevel} />
         </LogoContainer>
+        <TitleContainer>
+          <Title big={big}>Veterinari</Title>
+          <Title big={big}>l'Arc de l'Eixample</Title>
+        </TitleContainer>
         <NavRight>
           <NavMenu>
-            <NavItem>
-              <Link>Home</Link>
+            <NavItem big={big}>
+              <Link big={big}>Home</Link>
             </NavItem>
-            <NavItem>
-              <Link>About</Link>
+            <NavItem big={big}>
+              <Link big={big}>About</Link>
             </NavItem>
-            <NavItem>
-              <Link>Contact</Link>
+            <NavItem big={big}>
+              <Link big={big}>Contact</Link>
             </NavItem>
           </NavMenu>
-          <ImportantTextWrapper>
+          {/* <ImportantTextWrapper>
             <ImportantText>Urgencias 24h</ImportantText>
-          </ImportantTextWrapper>
+          </ImportantTextWrapper> */}
         </NavRight>
       </NavbarContainer>
     </Nav>
   );
-}
+};
 
 export default Navbar;

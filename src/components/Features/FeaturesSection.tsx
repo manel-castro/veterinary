@@ -5,16 +5,24 @@ import {
   InfoContainer,
   InfoRow,
   BadgeText,
+  BadgeTitle,
   Heading,
   Subtitle,
   ImgWrapper,
   Img,
   InfoButton,
   BadgeWrapper,
+  BadgeIcon1,
+  BadgeIcon2,
+  BadgeIcon3,
+  BadgeIcon4,
 } from './FeaturesSection.elements';
 
 interface Section {
-  BadgeText: string;
+  Badge1: { Title: string; Text: string };
+  Badge2: { Title: string; Text: string };
+  Badge3: { Title: string; Text: string };
+  Badge4: { Title: string; Text: string };
 }
 
 function FeaturesSection(section: Section) {
@@ -26,29 +34,37 @@ function FeaturesSection(section: Section) {
       <InfoRow>
         <InfoColumn>
           <BadgeWrapper>
+            <BadgeIcon1 />
             <TextWrapper>
-              <BadgeText>{section.BadgeText}</BadgeText>
+              <BadgeTitle>{section.Badge1.Title}</BadgeTitle>
+              <BadgeText>{section.Badge1.Text}</BadgeText>
             </TextWrapper>
           </BadgeWrapper>
         </InfoColumn>
         <InfoColumn>
           <BadgeWrapper>
+            <BadgeIcon2 />
             <TextWrapper>
-              <BadgeText>{section.BadgeText}</BadgeText>
+              <BadgeTitle>{section.Badge2.Title}</BadgeTitle>
+              <BadgeText>{section.Badge2.Text}</BadgeText>
             </TextWrapper>
           </BadgeWrapper>
         </InfoColumn>
         <InfoColumn>
           <BadgeWrapper>
+            <BadgeIcon3 />
             <TextWrapper>
-              <BadgeText>{section.BadgeText}</BadgeText>
+              <BadgeTitle>{section.Badge3.Title}</BadgeTitle>
+              <BadgeText>{section.Badge3.Text}</BadgeText>
             </TextWrapper>
           </BadgeWrapper>
         </InfoColumn>
         <InfoColumn>
           <BadgeWrapper>
+            <BadgeIcon4 />
             <TextWrapper>
-              <BadgeText>{section.BadgeText}</BadgeText>
+              <BadgeTitle>{section.Badge4.Title}</BadgeTitle>
+              <BadgeText>{section.Badge4.Text}</BadgeText>
             </TextWrapper>
           </BadgeWrapper>
         </InfoColumn>

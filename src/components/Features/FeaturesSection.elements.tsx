@@ -2,20 +2,24 @@ import styled from 'styled-components';
 import Theme from '../../api/data/Theme';
 import { Container, Button } from '../../globalStyles';
 
+import Sections from '../../api/data/Data';
+
+const features = Sections.features;
+
 // height: calc(100vh-80px);
 
 export const InfoContainer = styled(Container)`
   padding: 150px 70px;
   background: ${Theme.Features.FeaturesContainer.BgColor};
   transform: skewY(5deg);
-  max-height: 500px;
 `;
 
 // D9C3CE
 export const InfoRow = styled.div`
   display: flex;
   flex-wrap: wrap;
-  align-items: center;
+  align-items: space-around;
+  justify-content: space-around;
   transform: skewY(-5deg);
 `;
 
@@ -23,30 +27,77 @@ export const InfoColumn = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 0 30px;
+  padding: 0px;
   flex: 1;
   flex-basis: 25%;
 
   flex-direction: column;
 `;
 
-export const TextWrapper = styled.div`
-  max-width: 540px;
-  padding-top: 0;
-  padding-bottom: 30px;
-  flex: 1;
-  flex-basis: 25%;
+export const BadgeWrapper = styled.div`
+  height: 350px;
+  width: 300px;
+  margin: 10px;
+  padding: 20px;
+  border: 10px solid white;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
 `;
 
-export const BadgeText = styled.div`
-  font-size: 18px;
+export const BadgeIcon1 = styled(features.Badge1.Img)`
+  color: white;
+  font-size: 65px;
+  height: 100%;
+`;
+
+export const BadgeIcon2 = styled(features.Badge2.Img)`
+  color: white;
+  font-size: 65px;
+  height: 100%;
+`;
+
+export const BadgeIcon3 = styled(features.Badge3.Img)`
+  color: white;
+  font-size: 65px;
+  height: 100%;
+`;
+
+export const BadgeIcon4 = styled(features.Badge4.Img)`
+  color: white;
+  font-size: 65px;
+  height: 100%;
+`;
+
+export const TextWrapper = styled.div`
+  color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  height: 100%;
+`;
+
+export const BadgeTitle = styled.h3`
+  font-size: 32px;
   color: ${Theme.Features.BadgeText.TColor};
   line-height: 16px;
   letter-spacing: 1.4px;
-  margin-bottom: 16px;
+  margin-bottom: 24px;
+  text-align: center;
 `;
 
-export const BadgeWrapper = styled.div`
+export const BadgeText = styled.p`
+  font-size: 22px;
+  color: ${Theme.Features.BadgeText.TColor};
+  line-height: 28px;
+  letter-spacing: 1.4px;
+  margin-bottom: 16px;
+  text-align: center;
+`;
+
+export const BadgeBorder = styled.div`
   background: white;
   height: 200px;
   width: 170px;
@@ -86,7 +137,7 @@ export const InfoButton = styled(Button)`
   font-size: 20px;
 
   &:hover {
-    background: ${Theme.InfoSection.InfoButtonHover.BgColor};
-    color: ${Theme.InfoSection.InfoButtonHover.TColor};
+    background: ${Theme.InfoSection.InfoButton.BgColorHover};
+    color: ${Theme.InfoSection.InfoButton.TColorHover};
   }
 `;

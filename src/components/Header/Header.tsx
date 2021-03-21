@@ -11,7 +11,7 @@ export default function Header(section: Section) {
   return (
     <HeaderContainer HeaderImg={section.HeaderImg}>
       <TextWrapper>
-        <Title>Veterinario l'Arc de l'Eixample</Title>
+        <Title></Title>
       </TextWrapper>
     </HeaderContainer>
   );

@@ -145,7 +145,7 @@ export const ContactButton = styled(Button)`
   margin-top: 10px;
 
   &:hover {
-    background: ${Theme.InfoSection.InfoButtonHover.BgColor};
-    color: ${Theme.InfoSection.InfoButtonHover.TColor};
+    background: ${Theme.InfoSection.InfoButton.BgColorHover};
+    color: ${Theme.InfoSection.InfoButton.TColorHover};
   }
 `;
