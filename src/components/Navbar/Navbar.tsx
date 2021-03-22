@@ -18,17 +18,17 @@ import {
 const Navbar = () => {
   const [big, setBig] = useState('big');
   const [scrollLevel, setScrollLevel] = useState(0);
-  const TARGET_OFFSET = [200, 400];
+  const TARGET_OFFSET = 400;
 
   useEffect(() => {
     const actionToDo = () => {
-      // if (window.pageYOffset > TARGET_OFFSET) {
-      //   setBig('');
-      // } else {
-      //   setBig('big');
-      // }
-      setScrollLevel(window.pageYOffset);
-      console.log(scrollLevel);
+      if (window.pageYOffset > TARGET_OFFSET) {
+        setBig('');
+      } else {
+        setBig('big');
+      }
+      // setScrollLevel(window.pageYOffset);
+      // console.log(scrollLevel);
     };
 
     const handleNav = () => {

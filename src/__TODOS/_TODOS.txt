@@ -1,20 +1,34 @@
-Contact Form
+
+TODOS: 
+- Reviews section
+- Offers section
+- Map on header
+
+English version
+
+Make items responsive
+  - Abstract common ittems to make it easier
+  - Apply flex to items
+  - Mobile version
+
 
 Contact by Whatsapp/Telegram button
 
 Galeria
 
-Apply flex to items
-  - Map
-  - Form 
 
 
-Make items responsive
-  - Abstract common ittems to make it easier
 
-Mobile version
+Possible TODOS
+Scroll EFFECTS: 
+- Simulated scrollbar, the original hidden.
+- Divs flow at different velocity than scrolling (see web bookmark: https://stackoverflow.com/questions/34177626/how-to-change-the-scroll-speed-of-a-div) 
 
-English version
+
+
+
+
+
 
 Icons
 

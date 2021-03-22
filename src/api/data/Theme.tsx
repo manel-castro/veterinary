@@ -15,7 +15,7 @@ const Theme = {
     Color: {
       Links: 'black',
       HoverLinks: colors.orange,
-      NavBackground: 'rgba(0,0,0,0)',
+      NavBackground: 'white',
     },
   },
   Features: {

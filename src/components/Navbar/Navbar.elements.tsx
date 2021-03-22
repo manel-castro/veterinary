@@ -20,8 +20,10 @@ export const Nav = styled.nav`
 export const NavbarContainer = styled(Container)<{ big: string }>`
   display: flex;
   justify-content: space-between;
-  height: ${({ big }) => (big ? '250px' : '80px')};
-  background: ${Theme.Nav.Color.NavBackground};
+  height: ${({ big }) => (big ? '160px' : '80px')};
+  background: ${({ big }) =>
+    big ? 'rgba(0,0,0,0)' : `${Theme.Nav.Color.NavBackground}`};
+  transition: height 100ms ease-in;
 `;
 
 // export const NavLogo = styled();
@@ -52,7 +54,7 @@ export const NavbarButton = styled(Button)<{ big: string }>`
 `;
 
 export const NavItem = styled.li<{ big: string }>`
-  height: ${({ big }) => (big ? '200px' : '80px')};
+  height: ${({ big }) => (big ? '160px' : '80px')};
   border-bottom: ${({ big }) =>
     big ? '' : `2px solid ${Theme.Nav.Color.NavBackground}`};
 
@@ -60,6 +62,8 @@ export const NavItem = styled.li<{ big: string }>`
     border-bottom: ${({ big }) =>
       big ? '' : ` 2px solid ${Theme.Nav.Color.HoverLinks}`};
   }
+
+  transition: height 100ms ease-in;
 `;
 
 export const Link = styled.div<{ big: string }>`
@@ -67,7 +71,7 @@ export const Link = styled.div<{ big: string }>`
   display: flex;
   align-items: center;
   text-decoration: none;
-  padding: ${({ big }) => (big ? '1rem 2rem' : '0.5rem 1rem')};
+  padding: ${({ big }) => (big ? '1rem 2rem' : '1rem 2rem')};
   height: 100%;
   cursor: pointer;
   font-size: ${({ big }) => (big ? '25px' : '18')};
@@ -98,20 +102,17 @@ export const LogoContainer = styled.div<{ big: string }>`
   display: flex;
   align-items: center;
   justify-content: center;
-  height: ${({ big }) => (big ? '250px' : '80px')};
-  width: ${({ big }) => (big ? '250px' : '80px')};
+  height: ${({ big }) => (big ? '160px' : '80px')};
+  width: ${({ big }) => (big ? '160px' : '80px')};
+  transition: height 100ms ease-in;
 `;
 
 export const Logo = styled.div<{ big: string; scrollLevel: number }>`
   background-image: url(${LogoImg});
   background-size: cover;
   background-position: center;
-  height: ${({ scrollLevel }) =>
-    scrollAdapter(scrollLevel, scrollRange, [60, 185])}px;
-
-  width: ${({ scrollLevel }) =>
-    scrollAdapter(scrollLevel, scrollRange, [60, 185])}px;
-  transition: all 120ms linear;
+  height: ${({ big }) => (big ? '120px' : '60px')};
+  width: ${({ big }) => (big ? '120px' : '60px')};
 `;
 
 export const ImportantTextWrapper = styled.div`
