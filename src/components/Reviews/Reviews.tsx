@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, memo } from 'react';
 
 const _items = [
   {
@@ -43,20 +43,24 @@ const _items = [
   },
 ];
 
-interface Item {
+type Item = {
   pos?: number;
   player: {
     title: string;
     desc: string;
     image: string;
   };
+};
+
+export interface Props {
+  items: Array<Item>;
 }
 
-const List = ({ list }: { list: Item[] }) => {
+const List: React.FC<Props> = (props: Props) => {
   useEffect(() => console.log('list rerendered'));
   return (
     <ul style={{ margin: '100px' }}>
-      {list.map((item: Item, key: number) => (
+      {props.items.map((item: Item, key: number) => (
         <li key={`${key}`} style={{ padding: '70px' }}>
           {item.player.title}
         </li>
@@ -70,13 +74,37 @@ const Carousel = () => {
 
   const handleClick = (e: any) => {
     e.preventDefault();
-    setItems((prev) => items.reverse());
+    setItems((prev) => {
+      return prev.map((item: any, key: number) => {
+        if (key === 2) {
+          console.log(item.player.title);
+          let newItem = item;
+          newItem.player.title = 'SOMETHING CHANGED';
+          return newItem;
+        } else {
+          return item;
+        }
+      });
+    });
   };
   console.log(items);
+  useEffect(() => {
+    console.log('container rendered');
+  });
+
+  // const changeRandom = () => {
+  //   const index = Math.floor(Math.random() * items.length);
+  //   const newList = items.slice();
+  //   newList[index] = Math.floor(Math.random() * 10).toString();
+
+  //   this.setState({
+  //     listItems: newList,
+  //   });
+  // };
 
   return (
     <div style={{ height: '100vh', width: '100%' }}>
-      <List list={items} />
+      <List items={items} />
       <button onClick={(e) => handleClick(e)}>Click me</button>
     </div>
   );

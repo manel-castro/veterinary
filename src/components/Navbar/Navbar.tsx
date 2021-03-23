@@ -18,7 +18,7 @@ import {
 const Navbar = () => {
   const [big, setBig] = useState('big');
   const [scrollLevel, setScrollLevel] = useState(0);
-  const TARGET_OFFSET = 400;
+  const TARGET_OFFSET = 100;
 
   useEffect(() => {
     const actionToDo = () => {
