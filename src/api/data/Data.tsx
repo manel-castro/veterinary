@@ -4,6 +4,9 @@ import latImg2 from '../../media/Man.svg';
 import headerImg from '../../media/header.jpeg';
 import { FaHospitalAlt, FaHeart, FaEarlybirds, FaCar } from 'react-icons/fa';
 
+import ratingImg1 from '../../media/señor.png';
+import ratingImg2 from '../../media/alba.png';
+
 const Sections = {
   header: {
     HeaderImg: headerImg,
@@ -29,6 +32,62 @@ const Sections = {
       Text: 'Contamos con parking gratuito para nuestros clientes',
       Img: FaCar,
     },
+  },
+  testimonials: {
+    Heading: 'Por algo les encantamos',
+    TopLine: '',
+    carousel: [
+      {
+        player: {
+          name: 'Cesar Vidal',
+          image: ratingImg1,
+          rating: 5,
+          opinion:
+            'Muy buenos Veterinarios, cuidando mucho a las mascotas, todo muy bien explicado y muy atentos. Esterilizaron a mi gatita y todo perfecto, operación, chip, campana, las curas y medicamentos tal y como dijeron en un principio, siempre muy bien explicado y claro. Además de buenos y económicos tienen mucho cuidado con los animales, no soy de Barcelona, pero vale la pena hacer unos kilómetros por la atención y profesionalidad que tienen. Sin duda los mejores !!!',
+          opinionLink: 'https://goo.gl/maps/bsvpirMac4uJhJcV7',
+        },
+      },
+      {
+        player: {
+          name: 'Cesar Vidal',
+          image: ratingImg2,
+          rating: 5,
+          opinion:
+            'Muy buenos Veterinarios, cuidando mucho a las mascotas, todo muy bien explicado y muy atentos. Esterilizaron a mi gatita y todo perfecto, operación, chip, campana, las curas y medicamentos tal y como dijeron en un principio, siempre muy bien explicado y claro. Además de buenos y económicos tienen mucho cuidado con los animales, no soy de Barcelona, pero vale la pena hacer unos kilómetros por la atención y profesionalidad que tienen. Sin duda los mejores !!!',
+          opinionLink: 'https://goo.gl/maps/bsvpirMac4uJhJcV7',
+        },
+      },
+      {
+        player: {
+          name: 'Cesar Vidal',
+          image: ratingImg1,
+          rating: 5,
+          opinion:
+            'Muy buenos Veterinarios, cuidando mucho a las mascotas, todo muy bien explicado y muy atentos. Esterilizaron a mi gatita y todo perfecto, operación, chip, campana, las curas y medicamentos tal y como dijeron en un principio, siempre muy bien explicado y claro. Además de buenos y económicos tienen mucho cuidado con los animales, no soy de Barcelona, pero vale la pena hacer unos kilómetros por la atención y profesionalidad que tienen. Sin duda los mejores !!!',
+          opinionLink: 'https://goo.gl/maps/bsvpirMac4uJhJcV7',
+        },
+      },
+      {
+        player: {
+          name: 'Cesar Vidal',
+          image: ratingImg1,
+          rating: 5,
+          opinion:
+            'Muy buenos Veterinarios, cuidando mucho a las mascotas, todo muy bien explicado y muy atentos. Esterilizaron a mi gatita y todo perfecto, operación, chip, campana, las curas y medicamentos tal y como dijeron en un principio, siempre muy bien explicado y claro. Además de buenos y económicos tienen mucho cuidado con los animales, no soy de Barcelona, pero vale la pena hacer unos kilómetros por la atención y profesionalidad que tienen. Sin duda los mejores !!!',
+          opinionLink: 'https://goo.gl/maps/bsvpirMac4uJhJcV7',
+        },
+      },
+      {
+        player: {
+          name: 'Cesar Vidal',
+          image: ratingImg1,
+          rating: 5,
+          opinion:
+            'Muy buenos Veterinarios, cuidando mucho a las mascotas, todo muy bien explicado y muy atentos. Esterilizaron a mi gatita y todo perfecto, operación, chip, campana, las curas y medicamentos tal y como dijeron en un principio, siempre muy bien explicado y claro. Además de buenos y económicos tienen mucho cuidado con los animales, no soy de Barcelona, pero vale la pena hacer unos kilómetros por la atención y profesionalidad que tienen. Sin duda los mejores !!!',
+          opinionLink: 'https://goo.gl/maps/bsvpirMac4uJhJcV7',
+        },
+      },
+    ],
   },
   section1: {
     // Content

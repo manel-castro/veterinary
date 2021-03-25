@@ -15,9 +15,6 @@ export const InfoRow = styled.div`
   margin: 0 -15px -15px 0px;
   flex-wrap: wrap;
   align-items: center;
-
-  flex-direction: ${({ imgStart }: { imgStart: boolean }) =>
-    imgStart ? 'row-reverse' : 'row'};
 `;
 
 export const InfoColumn = styled.div`
@@ -32,17 +29,17 @@ export const InfoColumn = styled.div`
 `;
 
 export const TextWrapper = styled.div`
-  max-width: 540px;
   padding-top: 0;
   padding-bottom: 60px;
-  flex: 1;
-  flex-basis: 50%;
+  display: flex;
+  justify-content: center;
 `;
 
 export const TopLine = styled.div`
   font-size: 18px;
   color: ${Theme.InfoSection.TopLine.TColor};
   line-height: 16px;
+  text-align: center;
   letter-spacing: 1.4px;
   margin-bottom: 16px;
 `;

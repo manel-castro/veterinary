@@ -13,7 +13,7 @@ function Home() {
     <>
       <Header {...Sections.header} />
       <FeaturesSection {...Sections.features} />
-      <Testimonials {...Sections.section1} />
+      <Testimonials {...Sections.testimonials} />
       <FirstInfoSection {...Sections.section1} />
       <InfoSection {...Sections.section2} />
       <ContactSection {...Sections.contact} />

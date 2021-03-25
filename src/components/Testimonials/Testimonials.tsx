@@ -12,29 +12,26 @@ import {
   InfoButton,
 } from './Testimonials.elements';
 
-import Carousel from '../Carousel/Carousel';
+import Carousel, { CarouselItemsProps } from '../Carousel/Carousel';
 
 interface Section {
   TopLine: string;
   Heading: string;
-  Subtitle: string;
-  ButtonText: string;
-  LatImg: any;
-  imgStart: boolean;
+  carousel: CarouselItemsProps[];
 }
 
-function Testimonials(section: Section) {
+function Testimonials(testimonials: Section) {
   return (
     <InfoContainer>
-      <InfoRow imgStart={section.imgStart}>
+      <InfoRow>
         <InfoColumn>
           <TextWrapper>
-            <TopLine>{section.TopLine}</TopLine>
-            <Heading>{section.Heading}</Heading>
+            <TopLine>{testimonials.TopLine}</TopLine>
+            <Heading>{testimonials.Heading}</Heading>
           </TextWrapper>
         </InfoColumn>
         <InfoColumn>
-          <Carousel />
+          <Carousel carousel={testimonials.carousel} />
         </InfoColumn>
       </InfoRow>
     </InfoContainer>

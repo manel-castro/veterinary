@@ -10,8 +10,6 @@ import {
   RatingWrapper,
   Stars,
 } from './Carousel.elements';
-import ratingImg1 from '../../media/señor.png';
-import ratingImg2 from '../../media/alba.png';
 
 // Comment:
 // this version of carousel is OK for computer, and very easily correct for mobile, but could be optimal TODO:
@@ -19,65 +17,16 @@ import ratingImg2 from '../../media/alba.png';
 // 2. Touch controls for mobile (finger movement)
 // sometimes it brokes (idk why)
 
-const _items = [
-  {
-    player: {
-      name: 'Cesar Vidal',
-      image: ratingImg1,
-      rating: 5,
-      opinion:
-        'Muy buenos Veterinarios, cuidando mucho a las mascotas, todo muy bien explicado y muy atentos. Esterilizaron a mi gatita y todo perfecto, operación, chip, campana, las curas y medicamentos tal y como dijeron en un principio, siempre muy bien explicado y claro. Además de buenos y económicos tienen mucho cuidado con los animales, no soy de Barcelona, pero vale la pena hacer unos kilómetros por la atención y profesionalidad que tienen. Sin duda los mejores !!!',
-      opinionLink: 'https://goo.gl/maps/bsvpirMac4uJhJcV7',
-    },
-  },
-  {
-    player: {
-      name: 'Cesar Vidal',
-      image: ratingImg2,
-      rating: 5,
-      opinion:
-        'Muy buenos Veterinarios, cuidando mucho a las mascotas, todo muy bien explicado y muy atentos. Esterilizaron a mi gatita y todo perfecto, operación, chip, campana, las curas y medicamentos tal y como dijeron en un principio, siempre muy bien explicado y claro. Además de buenos y económicos tienen mucho cuidado con los animales, no soy de Barcelona, pero vale la pena hacer unos kilómetros por la atención y profesionalidad que tienen. Sin duda los mejores !!!',
-      opinionLink: 'https://goo.gl/maps/bsvpirMac4uJhJcV7',
-    },
-  },
-  {
-    player: {
-      name: 'Cesar Vidal',
-      image: ratingImg1,
-      rating: 5,
-      opinion:
-        'Muy buenos Veterinarios, cuidando mucho a las mascotas, todo muy bien explicado y muy atentos. Esterilizaron a mi gatita y todo perfecto, operación, chip, campana, las curas y medicamentos tal y como dijeron en un principio, siempre muy bien explicado y claro. Además de buenos y económicos tienen mucho cuidado con los animales, no soy de Barcelona, pero vale la pena hacer unos kilómetros por la atención y profesionalidad que tienen. Sin duda los mejores !!!',
-      opinionLink: 'https://goo.gl/maps/bsvpirMac4uJhJcV7',
-    },
-  },
-  {
-    player: {
-      name: 'Cesar Vidal',
-      image: ratingImg1,
-      rating: 5,
-      opinion:
-        'Muy buenos Veterinarios, cuidando mucho a las mascotas, todo muy bien explicado y muy atentos. Esterilizaron a mi gatita y todo perfecto, operación, chip, campana, las curas y medicamentos tal y como dijeron en un principio, siempre muy bien explicado y claro. Además de buenos y económicos tienen mucho cuidado con los animales, no soy de Barcelona, pero vale la pena hacer unos kilómetros por la atención y profesionalidad que tienen. Sin duda los mejores !!!',
-      opinionLink: 'https://goo.gl/maps/bsvpirMac4uJhJcV7',
-    },
-  },
-  {
-    player: {
-      name: 'Cesar Vidal',
-      image: ratingImg1,
-      rating: 5,
-      opinion:
-        'Muy buenos Veterinarios, cuidando mucho a las mascotas, todo muy bien explicado y muy atentos. Esterilizaron a mi gatita y todo perfecto, operación, chip, campana, las curas y medicamentos tal y como dijeron en un principio, siempre muy bien explicado y claro. Además de buenos y económicos tienen mucho cuidado con los animales, no soy de Barcelona, pero vale la pena hacer unos kilómetros por la atención y profesionalidad que tienen. Sin duda los mejores !!!',
-      opinionLink: 'https://goo.gl/maps/bsvpirMac4uJhJcV7',
-    },
-  },
-];
-
-interface CarouselItemProps {
+export interface CarouselItemProps {
   rating: number;
   opinion: string;
   name: string;
   image: any;
   opinionLink?: string;
+}
+
+export interface CarouselItemsProps {
+  player: CarouselItemProps;
 }
 
 const CarouselItem = ({ rating, opinion, name, image }: CarouselItemProps) => {
@@ -105,11 +54,15 @@ const CarouselItem = ({ rating, opinion, name, image }: CarouselItemProps) => {
   );
 };
 
-const Carousel = () => {
+interface CarouselProps {
+  carousel: CarouselItemsProps[];
+}
+
+const Carousel = (Props: CarouselProps) => {
+  const { carousel } = Props;
   useEffect(() => {
-    setInterval(changeOrder, 4000);
+    // setInterval(changeOrder, 4000);
   });
-  const [items, setItems] = useState(_items);
 
   function changeOrder() {
     const allSlides = document.querySelectorAll('.single-slide');
@@ -134,42 +87,42 @@ const Carousel = () => {
     <div className="all-slides">
       <div className="single-slide" data-order="1">
         <CarouselItem
-          rating={_items[0].player.rating!}
-          opinion={_items[0].player.opinion}
-          name={_items[0].player.name}
-          image={_items[0].player.image}
+          rating={carousel[0].player.rating!}
+          opinion={carousel[0].player.opinion}
+          name={carousel[0].player.name}
+          image={carousel[0].player.image}
         />
       </div>
       <div className="single-slide" data-order="2">
         <CarouselItem
-          rating={_items[1].player.rating!}
-          opinion={_items[1].player.opinion}
-          name={_items[1].player.name}
-          image={_items[1].player.image}
+          rating={carousel[1].player.rating!}
+          opinion={carousel[1].player.opinion}
+          name={carousel[1].player.name}
+          image={carousel[1].player.image}
         />{' '}
       </div>
       <div className="single-slide" data-order="3">
         <CarouselItem
-          rating={_items[0].player.rating!}
-          opinion={_items[0].player.opinion}
-          name={_items[0].player.name}
-          image={_items[0].player.image}
+          rating={carousel[0].player.rating!}
+          opinion={carousel[0].player.opinion}
+          name={carousel[0].player.name}
+          image={carousel[0].player.image}
         />{' '}
       </div>
       <div className="single-slide" data-order="4">
         <CarouselItem
-          rating={_items[0].player.rating!}
-          opinion={_items[0].player.opinion}
-          name={_items[0].player.name}
-          image={_items[0].player.image}
+          rating={carousel[0].player.rating!}
+          opinion={carousel[0].player.opinion}
+          name={carousel[0].player.name}
+          image={carousel[0].player.image}
         />{' '}
       </div>
       <div className="single-slide" data-order="5">
         <CarouselItem
-          rating={_items[0].player.rating!}
-          opinion={_items[0].player.opinion}
-          name={_items[0].player.name}
-          image={_items[0].player.image}
+          rating={carousel[0].player.rating!}
+          opinion={carousel[0].player.opinion}
+          name={carousel[0].player.name}
+          image={carousel[0].player.image}
         />{' '}
       </div>
     </div>
