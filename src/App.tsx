@@ -3,7 +3,6 @@ import GlobalStyle from './globalStyles';
 import Navbar from './components/Navbar/Navbar';
 import Home from './components/Home';
 import Test from './components/Test/Test';
-import Carousel from './components/Reviews/Reviews';
 
 import { Route } from 'react-router-dom';
 
@@ -14,7 +13,6 @@ function App() {
       <Navbar />
       <Route exact path="/" component={Home} />
       <Route path="/test" component={Test} />
-      <Route path="/Carousel" component={Carousel} />
     </>
   );
 }
